@@ -77,11 +77,11 @@ int shkronjaPare(struct person p[], char c){
 //Kerkesa 2
 int mbiemriMeIGjate(struct person p[]){
 	int max= 0;
-	for(int i=0; i<MAX_PERSONA-1; i++){
-		for(int j=i+1; j<MAX_PERSONA; j++){
-			if(strlen(p[i].mbiemri)<strlen(p[j].mbiemri)){
-				max= j;
-			}
+	int gjatesiaMax = strlen(p[0].mbiemri);
+	for(int i=1; i<MAX_PERSONA-1; i++){
+			if(gjatesiaMax < strlen(p[i].mbiemri)){
+				max= i;
+				gjatesiaMax = strlen(p[i].mbiemri);
 		}
 	}
 	return max;
